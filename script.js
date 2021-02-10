@@ -175,11 +175,8 @@ function getRandomInt(max) {
 
 // Create Correct/Incorrect Random Equations
 function createEquations() {
-  // Randomly choose how many correct equations there should be
   const correctEquations = getRandomInt(questionAmount);
-  // Set amount of wrong equations
   const wrongEquations = questionAmount - correctEquations;
-  // Loop through for each correct equation, multiply random numbers up to 9, push to array
   for (let i = 0; i < correctEquations; i++) {
     firstNumber = getRandomInt(9);
     secondNumber = getRandomInt(9);
@@ -213,7 +210,6 @@ function equationsToDOM() {
     // Equation Text
     const equationText = document.createElement('h1');
     equationText.textContent = equation.value;
-    // Append
     item.appendChild(equationText);
     itemContainer.appendChild(item);
   });
@@ -288,7 +284,6 @@ function selectQuestionAmount(e) {
 // Switch selected input styling
 startForm.addEventListener('click', () => {
   radioContainers.forEach((radioEl) => {
-    // Remove Selected Label Styling
     radioEl.classList.remove('selected-label');
     // Add it back if radio input is checked
     if (radioEl.children[1].checked) {
